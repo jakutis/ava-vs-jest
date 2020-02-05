@@ -1,8 +1,6 @@
 Prerequisites: python 3, nodejs
 
-Run:
-
-  ./script.sh <folder name for result files>
+Run: `./script.sh <folder name for result files>`
 
 Change parameters: edit variables on top of `script.sh`
 

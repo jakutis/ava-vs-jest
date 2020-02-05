@@ -1,6 +1,11 @@
+# Preface
+
 Prerequisites: python 3, nodejs
 
 Tested to run well on Linux.
+If you don't use Linux or don't want to run the script, just download result files below (`results.zip` or `plot-versus.pdf`)
+
+# Use cases
 
 Run: `./script.sh <folder name for result files>`
 

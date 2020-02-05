@@ -9,7 +9,6 @@ then
 else
   ROOT="$(pwd)"
 fi
-echo ROOT=$ROOT
 mkdir -p $ROOT || exit
 rm -f $ROOT/time $ROOT/max-ram $ROOT/failed
 
@@ -19,36 +18,25 @@ export PATH="$PATH:$HOME/.local/bin"
 npm install
 export PATH="$PATH:$(pwd)/node_modules/.bin"
 
-function runjest {
-    N="$1"
-    RAM="$2"
-    BASE="$ROOT/result-jest-$RAM-$N"
-
-    echo "# N=$N R=$RAM"
-    date +%s > "$BASE.start"
-    (FATJEST_COUNT="$N" node --max_old_space_size=$RAM $(which jest) --silent jest.spec.js 1>"$BASE.stdout" 2>&1;echo $? > "$BASE.code") &
-    psrecord --include-children --plot "$BASE.pdf" --log "$BASE.log" 2>/dev/null 1>&2 $!
-    date +%s > "$BASE.finish"
-    TIME=$(($(cat "$BASE.finish") - $(cat "$BASE.start")))
-    echo "$BASE $TIME" >> $ROOT/time
-    MAXRAM=$(cat "$BASE.log" | sed 's/\s\s*/ /g' |tail -n +2|cut -f 4 -d ' '|sort -n|tail -n 1)
-    echo "$BASE $MAXRAM" >> $ROOT/max-ram
-    if [ "$(cat "$BASE.code")" != "0" ]
-    then
-      rm $BASE.pdf
-      echo $BASE >> $ROOT/failed
-    fi
+function jest {
+    (FATJEST_COUNT="$1" node --max_old_space_size=$2 ./node_modules/.bin/jest --silent jest.spec.js 1>"$3.stdout" 2>&1;echo $? > "$3.code") &
+    psrecord --include-children --plot "$3.pdf" --log "$3.log" 1>/dev/null 2>&1 $!
 }
 
-function runava {
-    N="$1"
-    RAM="$2"
-    BASE="$ROOT/result-ava-$RAM-$N"
+function ava {
+    (FATJEST_COUNT="$1" node --max_old_space_size=$2 ./node_modules/.bin/ava ava.spec.js 1>"$3.stdout" 2>&1;echo $? > "$3.code") &
+    psrecord --include-children --plot "$3.pdf" --log "$3.log" 1>/dev/null 2>&1 $!
+}
+
+function runsome {
+    CMD="$1"
+    N="$2"
+    RAM="$3"
+    BASE="$ROOT/result-$CMD-$RAM-$N"
 
     echo "# N=$N R=$RAM"
     date +%s > "$BASE.start"
-    (FATJEST_COUNT="$N" node --max_old_space_size=$RAM $(which ava) ava.spec.js 1>"$BASE.stdout" 2>&1;echo $? > "$BASE.code") &
-    psrecord --include-children --plot "$BASE.pdf" --log "$BASE.log" 2>/dev/null 1>&2 $!
+    $CMD "$N" "$RAM" "$BASE"
     date +%s > "$BASE.finish"
     TIME=$(($(cat "$BASE.finish") - $(cat "$BASE.start")))
     echo "$BASE $TIME" >> $ROOT/time
@@ -70,7 +58,7 @@ for R in $RAMS
 do
   for N in $NS
   do
-    runava $N $R
+    runsome ava $N $R
   done
 done
 
@@ -83,7 +71,7 @@ for R in $RAMS
 do
   for N in $NS
   do
-    runjest $N $R
+    runsome jest $N $R
   done
 done
 

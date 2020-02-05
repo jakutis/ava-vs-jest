@@ -16,7 +16,6 @@ rm -f $ROOT/time $ROOT/max-ram $ROOT/failed
 pip3 install psrecord matplotlib --user
 export PATH="$PATH:$HOME/.local/bin"
 
-cd package
 npm install
 export PATH="$PATH:$(pwd)/node_modules/.bin"
 
@@ -26,10 +25,10 @@ function runjest {
     BASE="$ROOT/result-jest-$RAM-$N"
 
     echo "# N=$N R=$RAM"
-#    date +%s > "$BASE.start"
-#    (FATJEST_COUNT="$N" node --max_old_space_size=$RAM $(which jest) --silent jest.spec.js 1>"$BASE.stdout" 2>&1;echo $? > "$BASE.code") &
-#    psrecord --include-children --plot "$BASE.pdf" --log "$BASE.log" 2>/dev/null 1>&2 $!
-#    date +%s > "$BASE.finish"
+    date +%s > "$BASE.start"
+    (FATJEST_COUNT="$N" node --max_old_space_size=$RAM $(which jest) --silent jest.spec.js 1>"$BASE.stdout" 2>&1;echo $? > "$BASE.code") &
+    psrecord --include-children --plot "$BASE.pdf" --log "$BASE.log" 2>/dev/null 1>&2 $!
+    date +%s > "$BASE.finish"
     TIME=$(($(cat "$BASE.finish") - $(cat "$BASE.start")))
     echo "$BASE $TIME" >> $ROOT/time
     MAXRAM=$(cat "$BASE.log" | sed 's/\s\s*/ /g' |tail -n +2|cut -f 4 -d ' '|sort -n|tail -n 1)
@@ -47,10 +46,10 @@ function runava {
     BASE="$ROOT/result-ava-$RAM-$N"
 
     echo "# N=$N R=$RAM"
-#    date +%s > "$BASE.start"
-#    (FATJEST_COUNT="$N" node --max_old_space_size=$RAM $(which ava) ava.spec.js 1>"$BASE.stdout" 2>&1;echo $? > "$BASE.code") &
-#    psrecord --include-children --plot "$BASE.pdf" --log "$BASE.log" 2>/dev/null 1>&2 $!
-#    date +%s > "$BASE.finish"
+    date +%s > "$BASE.start"
+    (FATJEST_COUNT="$N" node --max_old_space_size=$RAM $(which ava) ava.spec.js 1>"$BASE.stdout" 2>&1;echo $? > "$BASE.code") &
+    psrecord --include-children --plot "$BASE.pdf" --log "$BASE.log" 2>/dev/null 1>&2 $!
+    date +%s > "$BASE.finish"
     TIME=$(($(cat "$BASE.finish") - $(cat "$BASE.start")))
     echo "$BASE $TIME" >> $ROOT/time
     MAXRAM=$(cat "$BASE.log" | sed 's/\s\s*/ /g' |tail -n +2|cut -f 4 -d ' '|sort -n|tail -n 1)

@@ -1,0 +1,7 @@
+PASS multi2/result-jest-2-tests/test1-jest.spec.js
+PASS multi2/result-jest-2-tests/test2-jest.spec.js
+
+Test Suites: 2 passed, 2 total
+Tests:       2 passed, 2 total
+Snapshots:   0 total
+Time:        1.474s

@@ -9,7 +9,9 @@ First basic step is to run one test file with many empty tests.
 You can find the scripts in [this repo](todo).
 Below are the results, which conclude that jest is significantly inferior and our benchmarks end early.
 
-Note: default `max-old-space-size` of Node.js is 512MB.
+Notes:
+* default `max-old-space-size` of Node.js is 512MB.
+* in the benchmarks ava test reporter is normal (names of all tests are printed), while jest is silenced (no output)
 
 # search for maximum number of tests
 

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "./find-max-tests-for-given-memory.sh results && ./observe-memory.sh results && ./observe-memory-multifile.sh results"
   },
   "author": "",
   "license": "ISC",

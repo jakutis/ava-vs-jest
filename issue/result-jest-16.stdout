@@ -1,21 +1,21 @@
-PASS multi2/result-jest-16-tests/test11-jest.spec.js
-PASS multi2/result-jest-16-tests/test4-jest.spec.js
-PASS multi2/result-jest-16-tests/test6-jest.spec.js
-PASS multi2/result-jest-16-tests/test2-jest.spec.js
-PASS multi2/result-jest-16-tests/test14-jest.spec.js
-PASS multi2/result-jest-16-tests/test7-jest.spec.js
-PASS multi2/result-jest-16-tests/test3-jest.spec.js
-PASS multi2/result-jest-16-tests/test9-jest.spec.js
-PASS multi2/result-jest-16-tests/test15-jest.spec.js
-PASS multi2/result-jest-16-tests/test5-jest.spec.js
-PASS multi2/result-jest-16-tests/test13-jest.spec.js
-PASS multi2/result-jest-16-tests/test12-jest.spec.js
-PASS multi2/result-jest-16-tests/test10-jest.spec.js
-PASS multi2/result-jest-16-tests/test16-jest.spec.js
-PASS multi2/result-jest-16-tests/test1-jest.spec.js
-PASS multi2/result-jest-16-tests/test8-jest.spec.js
+PASS multi3/result-jest-16-tests/test14-jest.spec.js
+PASS multi3/result-jest-16-tests/test8-jest.spec.js
+PASS multi3/result-jest-16-tests/test11-jest.spec.js
+PASS multi3/result-jest-16-tests/test4-jest.spec.js
+PASS multi3/result-jest-16-tests/test2-jest.spec.js
+PASS multi3/result-jest-16-tests/test1-jest.spec.js
+PASS multi3/result-jest-16-tests/test6-jest.spec.js
+PASS multi3/result-jest-16-tests/test7-jest.spec.js
+PASS multi3/result-jest-16-tests/test3-jest.spec.js
+PASS multi3/result-jest-16-tests/test9-jest.spec.js
+PASS multi3/result-jest-16-tests/test12-jest.spec.js
+PASS multi3/result-jest-16-tests/test15-jest.spec.js
+PASS multi3/result-jest-16-tests/test5-jest.spec.js
+PASS multi3/result-jest-16-tests/test13-jest.spec.js
+PASS multi3/result-jest-16-tests/test10-jest.spec.js
+PASS multi3/result-jest-16-tests/test16-jest.spec.js
 
 Test Suites: 16 passed, 16 total
 Tests:       16 passed, 16 total
 Snapshots:   0 total
-Time:        2.679s
+Time:        1.449s

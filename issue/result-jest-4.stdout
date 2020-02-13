@@ -1,9 +1,9 @@
-PASS multi2/result-jest-4-tests/test2-jest.spec.js
-PASS multi2/result-jest-4-tests/test4-jest.spec.js
-PASS multi2/result-jest-4-tests/test1-jest.spec.js
-PASS multi2/result-jest-4-tests/test3-jest.spec.js
+PASS multi3/result-jest-4-tests/test1-jest.spec.js
+PASS multi3/result-jest-4-tests/test2-jest.spec.js
+PASS multi3/result-jest-4-tests/test4-jest.spec.js
+PASS multi3/result-jest-4-tests/test3-jest.spec.js
 
 Test Suites: 4 passed, 4 total
 Tests:       4 passed, 4 total
 Snapshots:   0 total
-Time:        1.776s
+Time:        1.242s

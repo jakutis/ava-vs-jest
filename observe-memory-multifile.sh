@@ -19,13 +19,13 @@ export PATH="$PATH:$SRC/node_modules/.bin"
 
 function jest {
     BASE="$1"
-    (FATJEST_COUNT="1" node ./node_modules/.bin/jest --silent "$BASE"'-tests/*' 1>"$BASE.stdout" 2>&1;echo $? > "$BASE.code") &
+    (FATJEST_COUNT="1" node ./node_modules/.bin/jest --maxWorkers=4 --silent "$BASE"'-tests/*' 1>"$BASE.stdout" 2>&1;echo $? > "$BASE.code") &
     psrecord --include-children --plot "$BASE.png" --log "$BASE.log" 1>/dev/null 2>&1 $!
 }
 
 function ava {
     BASE="$1"
-    (FATJEST_COUNT="1" node ./node_modules/.bin/ava "$BASE"'-tests/*' 1>"$BASE.stdout" 2>&1;echo $? > "$BASE.code") &
+    (FATJEST_COUNT="1" node ./node_modules/.bin/ava --concurrency=4 "$BASE"'-tests/*' 1>"$BASE.stdout" 2>&1;echo $? > "$BASE.code") &
     psrecord --include-children --plot "$BASE.png" --log "$BASE.log" 1>/dev/null 2>&1 $!
 }
 

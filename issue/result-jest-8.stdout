@@ -1,13 +1,13 @@
-PASS multi2/result-jest-8-tests/test8-jest.spec.js
-PASS multi2/result-jest-8-tests/test6-jest.spec.js
-PASS multi2/result-jest-8-tests/test1-jest.spec.js
-PASS multi2/result-jest-8-tests/test2-jest.spec.js
-PASS multi2/result-jest-8-tests/test5-jest.spec.js
-PASS multi2/result-jest-8-tests/test3-jest.spec.js
-PASS multi2/result-jest-8-tests/test7-jest.spec.js
-PASS multi2/result-jest-8-tests/test4-jest.spec.js
+PASS multi3/result-jest-8-tests/test8-jest.spec.js
+PASS multi3/result-jest-8-tests/test4-jest.spec.js
+PASS multi3/result-jest-8-tests/test1-jest.spec.js
+PASS multi3/result-jest-8-tests/test2-jest.spec.js
+PASS multi3/result-jest-8-tests/test6-jest.spec.js
+PASS multi3/result-jest-8-tests/test7-jest.spec.js
+PASS multi3/result-jest-8-tests/test3-jest.spec.js
+PASS multi3/result-jest-8-tests/test5-jest.spec.js
 
 Test Suites: 8 passed, 8 total
 Tests:       8 passed, 8 total
 Snapshots:   0 total
-Time:        2.5s
+Time:        1.32s

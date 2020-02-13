@@ -5,7 +5,7 @@ Thus the first thing is the ability to run test files concurrently - only ava an
 Second is the actual performance of running the tests in our codebase, which already has many and will have more test files, many of which have very many generated tests.
 
 So obviously best way to answer that is synthetic benchmarks with ava and jest side-by-side!
-First basic step is to run one test file with many empty tests.
+We run one test file with many empty tests, followed by many test files with one empty test.
 You can find the scripts in [this repo](todo).
 Below are the results, which conclude that jest is significantly inferior and our benchmarks end early.
 

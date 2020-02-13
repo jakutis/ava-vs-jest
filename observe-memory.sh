@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-RAMS="128 256 512 1024"
-NS="10000 20000 30000 40000 50000"
+RAMS="512"
+NS="10000 25000 50000 52735 135555"
 ROOT="$1"
 if [ -n "$ROOT" ]
 then
@@ -12,7 +12,7 @@ fi
 mkdir -p $ROOT || exit
 rm -f $ROOT/time $ROOT/max-ram $ROOT/failed
 
-pip3 install psrecord matplotlib --user
+pip3 install psrecord matplotlib csv2md --user
 export PATH="$PATH:$HOME/.local/bin"
 
 npm install
@@ -20,12 +20,12 @@ export PATH="$PATH:$(pwd)/node_modules/.bin"
 
 function jest {
     (FATJEST_COUNT="$1" node --max_old_space_size=$2 ./node_modules/.bin/jest --silent jest.spec.js 1>"$3.stdout" 2>&1;echo $? > "$3.code") &
-    psrecord --include-children --plot "$3.pdf" --log "$3.log" 1>/dev/null 2>&1 $!
+    psrecord --include-children --plot "$3.png" --log "$3.log" 1>/dev/null 2>&1 $!
 }
 
 function ava {
     (FATJEST_COUNT="$1" node --max_old_space_size=$2 ./node_modules/.bin/ava ava.spec.js 1>"$3.stdout" 2>&1;echo $? > "$3.code") &
-    psrecord --include-children --plot "$3.pdf" --log "$3.log" 1>/dev/null 2>&1 $!
+    psrecord --include-children --plot "$3.png" --log "$3.log" 1>/dev/null 2>&1 $!
 }
 
 function runsome {
@@ -44,7 +44,7 @@ function runsome {
     echo "$BASE $MAXRAM" >> $ROOT/max-ram
     if [ "$(cat "$BASE.code")" != "0" ]
     then
-      rm $BASE.pdf
+      rm $BASE.png
       echo $BASE >> $ROOT/failed
     fi
 }
@@ -77,9 +77,28 @@ done
 
 for R in $RAMS
 do
-  pdfjam $ROOT/result-jest-$R-*pdf --pagecommand "jest-$R" --nup 2x5 --outfile $ROOT/plot-jest-$R.pdf
-  pdfjam $ROOT/result-ava-$R-*pdf --pagecommand "ava-$R" --nup 2x5 --outfile $ROOT/plot-ava-$R.pdf
-  pdfjam $ROOT/plot-ava-$R.pdf $ROOT/plot-jest-$R.pdf --pagecommand "versus-$R" --nup 2x1 --outfile $ROOT/plot-versus-$R.pdf
+  echo "tests,ava,jest" > "$ROOT/duration-$R.csv"
+  for N in $NS
+  do
+    convert +append $ROOT/result-ava-$R-$N.png $ROOT/result-jest-$R-$N.png $ROOT/plot-sidebyside-$R-$N.png
+    if [ "$(cat "$ROOT/result-jest-$R-$N.code")" = "0" ]
+    then
+      JEST_F="$(cat "$ROOT/result-jest-$R-$N.finish")"
+      JEST_S="$(cat "$ROOT/result-jest-$R-$N.start")"
+      JEST=$((JEST_F - JEST_S))
+    else
+      JEST="-"
+    fi
+    if [ "$(cat "$ROOT/result-ava-$R-$N.code")" = "0" ]
+    then
+      AVA_F="$(cat "$ROOT/result-ava-$R-$N.finish")"
+      AVA_S="$(cat "$ROOT/result-ava-$R-$N.start")"
+      AVA=$((AVA_F - AVA_S))
+    else
+      AVA="-"
+    fi
+    echo "$N,$AVA,$JEST" >> "$ROOT/duration-$R.csv"
+  done
+  csv2md "$ROOT/duration-$R.csv" > "$ROOT/duration-$R.md"
+  gnuplot -e "set datafile separator ',';set grid;set term png;set output '$ROOT/duration-$R.png';set ylabel 'time, s';set xlabel 'number of tests';plot '$ROOT/duration-$R.csv' using 1:2 with lines title 'ava', '$ROOT/duration-$R.csv' using 1:3 with lines title 'jest'"
 done
-
-pdfjam $ROOT/plot-versus-*.pdf --nup 1x1 --outfile $ROOT/plot-versus.pdf

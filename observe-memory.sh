@@ -2,15 +2,16 @@
 
 RAMS="512"
 NS="10000 25000 50000 52735 135555"
-ROOT="$1"
+ENV="$1"
+ROOT="$2"
+SRC="$(pwd)"
 if [ -n "$ROOT" ]
 then
-  ROOT="$(realpath "$ROOT")"
+  ROOT="$(realpath "$ROOT")-$ENV"
 else
-  ROOT="$(pwd)"
+  ROOT="$SRC-$ENV"
 fi
 mkdir -p $ROOT || exit
-rm -f $ROOT/time $ROOT/max-ram $ROOT/failed
 
 pip3 install psrecord matplotlib csv2md --user
 export PATH="$PATH:$HOME/.local/bin"
@@ -19,12 +20,12 @@ npm install
 export PATH="$PATH:$(pwd)/node_modules/.bin"
 
 function jest {
-    (FATJEST_COUNT="$1" node --max_old_space_size=$2 ./node_modules/.bin/jest --silent jest.spec.js 1>"$3.stdout" 2>&1;echo $? > "$3.code") &
+    (FATJEST_COUNT="$1" node --max_old_space_size=$2 ./node_modules/.bin/jest --env "$4" --silent "jest-$4.spec.js" 1>"$3.stdout" 2>&1;echo $? > "$3.code") &
     psrecord --include-children --plot "$3.png" --log "$3.log" 1>/dev/null 2>&1 $!
 }
 
 function ava {
-    (FATJEST_COUNT="$1" node --max_old_space_size=$2 ./node_modules/.bin/ava ava.spec.js 1>"$3.stdout" 2>&1;echo $? > "$3.code") &
+    (FATJEST_COUNT="$1" node --max_old_space_size=$2 ./node_modules/.bin/ava "ava-$4.spec.js" 1>"$3.stdout" 2>&1;echo $? > "$3.code") &
     psrecord --include-children --plot "$3.png" --log "$3.log" 1>/dev/null 2>&1 $!
 }
 
@@ -32,11 +33,12 @@ function runsome {
     CMD="$1"
     N="$2"
     RAM="$3"
+    ENV="$4"
     BASE="$ROOT/result-$CMD-$RAM-$N"
 
     echo "# N=$N R=$RAM"
     date +%s > "$BASE.start"
-    $CMD "$N" "$RAM" "$BASE"
+    $CMD "$N" "$RAM" "$BASE" "$ENV"
     date +%s > "$BASE.finish"
     TIME=$(($(cat "$BASE.finish") - $(cat "$BASE.start")))
     echo "$BASE $TIME" >> $ROOT/time
@@ -58,7 +60,7 @@ for R in $RAMS
 do
   for N in $NS
   do
-    runsome ava $N $R
+    runsome ava $N $R $ENV
   done
 done
 
@@ -71,7 +73,7 @@ for R in $RAMS
 do
   for N in $NS
   do
-    runsome jest $N $R
+    runsome jest $N $R $ENV
   done
 done
 

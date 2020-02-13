@@ -10,6 +10,9 @@ You can find the scripts in [this repo](todo).
 Below are the results, which conclude that jest is significantly inferior and our benchmarks end early.
 
 Notes:
+* the only features that jest bundles and we use and thus need to add to ava, are assertion library and JSDOM:
+  * for assertion library, latest `chai` is used there
+  * for JSDOM, latest `jsdom` is used there
 * default `max-old-space-size` of Node.js is 512MB.
 * the results are for Linux 4.19.0 kernel on `Intel(R) Core(TM) i7-7820HQ` CPU with `32GB` of RAM
 * in the benchmarks ava test reporter is normal (names of all tests are printed), while jest is silenced (no test name output)

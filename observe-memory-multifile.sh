@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 
 NS="1 2 4 8 16 32 64 128 256 512 1024"
-ROOT="$1"
+ENV="$1"
+ROOT="$2"
 SRC="$(pwd)"
 if [ -n "$ROOT" ]
 then
-  ROOT="$(realpath "$ROOT")"
+  ROOT="$(realpath "$ROOT")-$ENV"
 else
-  ROOT="$SRC"
+  ROOT="$SRC-$ENV"
 fi
 mkdir -p $ROOT || exit
 
@@ -19,7 +20,7 @@ export PATH="$PATH:$SRC/node_modules/.bin"
 
 function jest {
     BASE="$1"
-    (FATJEST_COUNT="1" node ./node_modules/.bin/jest --maxWorkers=4 --silent "$BASE"'-tests/*' 1>"$BASE.stdout" 2>&1;echo $? > "$BASE.code") &
+    (FATJEST_COUNT="1" node ./node_modules/.bin/jest --env "$2" --maxWorkers=4 --silent "$BASE"'-tests/*' 1>"$BASE.stdout" 2>&1;echo $? > "$BASE.code") &
     psrecord --include-children --plot "$BASE.png" --log "$BASE.log" 1>/dev/null 2>&1 $!
 }
 
@@ -32,15 +33,16 @@ function ava {
 function runsome {
     CMD="$1"
     N="$2"
+    ENV="$3"
     BASE="$ROOT/result-$CMD-$N"
 
     mkdir "$BASE-tests"
     for I in $(seq 1 $N)
     do
-      cp "$SRC/$CMD.spec.js" "$BASE-tests/test$I-$CMD.spec.js"
+      cp "$SRC/$CMD-$ENV.spec.js" "$BASE-tests/test$I-$CMD.spec.js"
     done
     date +%s > "$BASE.start"
-    $CMD "$BASE"
+    $CMD "$BASE" "$ENV"
     date +%s > "$BASE.finish"
     TIME=$(($(cat "$BASE.finish") - $(cat "$BASE.start")))
     MAXRAM=$(cat "$BASE.log" | sed 's/\s\s*/ /g' |tail -n +2|cut -f 4 -d ' '|sort -n|tail -n 1)
@@ -59,10 +61,10 @@ echo "N,ava,jest" > "$ROOT/time-per-file.csv"
 for N in $NS
 do
   echo "# $N"
-  JEST=$(runsome "jest" "$N")
+  JEST=$(runsome "jest" "$N" "$ENV")
   JEST_R="${JEST%% *}"
   JEST_T="${JEST##* }"
-  AVA=$(runsome "ava" "$N")
+  AVA=$(runsome "ava" "$N" "$ENV")
   AVA_R="${AVA%% *}"
   AVA_T="${AVA##* }"
   echo "$N,$AVA_R,$JEST_R" >> "$ROOT/memory.csv"

@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
 RAMS="8 16 32 64 128 256 512 1024"
-ROOT="$1"
+ENV="$1"
+ROOT="$2"
+SRC="$(pwd)"
 if [ -n "$ROOT" ]
 then
-  ROOT="$(realpath "$ROOT")"
+  ROOT="$(realpath "$ROOT")-$ENV"
 else
-  ROOT="$(pwd)"
+  ROOT="$SRC-$ENV"
 fi
 mkdir -p $ROOT || exit
 
@@ -17,11 +19,11 @@ npm install
 export PATH="$PATH:$(pwd)/node_modules/.bin"
 
 function jest {
-    (FATJEST_COUNT="$1" node --max_old_space_size=$2 ./node_modules/.bin/jest --silent jest.spec.js 1>/dev/null 2>&1;echo $?)
+    (FATJEST_COUNT="$1" node --max_old_space_size=$2 ./node_modules/.bin/jest --env "$3" --silent jest-$3.spec.js 1>/dev/null 2>&1;echo $?)
 }
 
 function ava {
-    (FATJEST_COUNT="$1" node --max_old_space_size=$2 ./node_modules/.bin/ava ava.spec.js 1>/dev/null 2>&1;echo $?)
+    (FATJEST_COUNT="$1" node --max_old_space_size=$2 ./node_modules/.bin/ava ava-$3.spec.js 1>/dev/null 2>&1;echo $?)
 }
 
 function runsome {
@@ -32,7 +34,7 @@ function runsome {
   while true
   do
     START=$(date +%s)
-    CODE=$($1 "$N" "$2")
+    CODE=$($1 "$N" "$2" "$3")
     FINISH=$(date +%s)
     DURATION=$((FINISH - START))
     if [ "$CODE" == 0 ]
@@ -56,10 +58,10 @@ echo "RAM,ava,jest" > "$ROOT/memory-per-test.csv"
 echo "RAM,ava,jest" > "$ROOT/time-per-test.csv"
 for R in $RAMS
 do
-  JEST=$(runsome "jest" "$R")
+  JEST=$(runsome "jest" "$R" "$ENV")
   JEST_N="${JEST%% *}"
   JEST_T="${JEST##* }"
-  AVA=$(runsome "ava" "$R")
+  AVA=$(runsome "ava" "$R" "$ENV")
   AVA_N="${AVA%% *}"
   AVA_T="${AVA##* }"
   echo "$R,$AVA_N,$JEST_N" >> "$ROOT/max-test-count.csv"

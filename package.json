@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "./find-max-tests-for-given-memory.sh results && ./observe-memory.sh results && ./observe-memory-multifile.sh results"
+    "start": "./find-max-tests-for-given-memory.sh node results && ./observe-memory.sh node results && ./observe-memory-multifile.sh node results && ./find-max-tests-for-given-memory.sh jsdom results && ./observe-memory.sh jsdom results && ./observe-memory-multifile.sh jsdom results"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "ava": "3.2.0",
-    "jest": "25.1.0"
+    "chai": "4.2.0",
+    "jest": "25.1.0",
+    "jsdom": "16.1.0",
+    "react": "16.12.0",
+    "react-dom": "16.12.0"
   }
 }

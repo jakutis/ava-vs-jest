@@ -27,29 +27,33 @@ function ava {
 }
 
 function runsome {
-  MAXN=""
   MIN=1
   MAX=1000000
-  N=$((MIN + (MAX - MIN) / 2))
+  MAXN=1
   while true
   do
+    N=$((MIN + (MAX - MIN) / 2))
+    echo $1 N=$N 1>&2
     START=$(date +%s)
     CODE=$($1 "$N" "$2" "$3")
     FINISH=$(date +%s)
     DURATION=$((FINISH - START))
     if [ "$CODE" == 0 ]
     then
+      MAXN=$N
+    fi
+    if [ "$(((N - MIN) / 2))" = "0" -o "$(((MAX - N) / 2))" = "0" ]
+    then
+      break
+    fi
+    if [ "$CODE" == 0 ]
+    then
       MIN=$N
     else
       MAX=$N
     fi
-    if [ "$(((MAX - MIN) / 2))" = "0" ]
-    then
-      break
-    fi
-    N=$((MIN + (MAX - MIN) / 2))
   done
-  echo "$N $DURATION"
+  echo "$MAXN $DURATION"
 }
 
 echo "RAM,ava,jest" > "$ROOT/max-test-count.csv"
@@ -58,12 +62,15 @@ echo "RAM,ava,jest" > "$ROOT/memory-per-test.csv"
 echo "RAM,ava,jest" > "$ROOT/time-per-test.csv"
 for R in $RAMS
 do
+  echo "R=$R ENV=$ENV"
   JEST=$(runsome "jest" "$R" "$ENV")
   JEST_N="${JEST%% *}"
   JEST_T="${JEST##* }"
   AVA=$(runsome "ava" "$R" "$ENV")
   AVA_N="${AVA%% *}"
   AVA_T="${AVA##* }"
+  echo -n $AVA_N > "$ROOT/max-test-count-ava-$R"
+  echo -n $JEST_N > "$ROOT/max-test-count-jest-$R"
   echo "$R,$AVA_N,$JEST_N" >> "$ROOT/max-test-count.csv"
   echo "$R,$AVA_T,$JEST_T" >> "$ROOT/duration.csv"
   echo "$R,$(echo $R/$AVA_N|bc -l),$(echo $R/$JEST_N|bc -l)" >> "$ROOT/memory-per-test.csv"

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 RAMS="512"
-NS="10000 25000 50000 52735 135555"
+NS="10000 25000 50000"
 ENV="$1"
 ROOT="$2"
 SRC="$(pwd)"
@@ -12,6 +12,7 @@ else
   ROOT="$SRC-$ENV"
 fi
 mkdir -p $ROOT || exit
+NS="$NS $(cat "$ROOT/max-test-count-jest-512") $(cat "$ROOT/max-test-count-ava-512")"
 
 pip3 install psrecord matplotlib csv2md --user
 export PATH="$PATH:$HOME/.local/bin"
@@ -37,9 +38,15 @@ function runsome {
     BASE="$ROOT/result-$CMD-$RAM-$N"
 
     echo "# N=$N R=$RAM"
-    date +%s > "$BASE.start"
-    $CMD "$N" "$RAM" "$BASE" "$ENV"
-    date +%s > "$BASE.finish"
+    I=0
+    while [ "$(cat "$BASE.code")" = "0" -a "$I" != "5" ]
+    do
+      rm -f "$BASE"*
+      date +%s > "$BASE.start"
+      $CMD "$N" "$RAM" "$BASE" "$ENV"
+      date +%s > "$BASE.finish"
+      I=$((I + 1))
+    done
     TIME=$(($(cat "$BASE.finish") - $(cat "$BASE.start")))
     echo "$BASE $TIME" >> $ROOT/time
     MAXRAM=$(cat "$BASE.log" | sed 's/\s\s*/ /g' |tail -n +2|cut -f 4 -d ' '|sort -n|tail -n 1)

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "./find-max-tests-for-given-memory.sh node results && ./observe-memory.sh node results && ./observe-memory-multifile.sh node results && ./find-max-tests-for-given-memory.sh jsdom results && ./observe-memory.sh jsdom results && ./observe-memory-multifile.sh jsdom results"
+    "start": "rm -rf issue && mkdir issue && ./find-max-tests-for-given-memory.sh node issue/results && ./find-max-tests-for-given-memory.sh jsdom issue/results && ./observe-memory.sh node issue/results && ./observe-memory.sh jsdom issue/results && ./observe-memory-multifile.sh node issue/results && ./observe-memory-multifile.sh jsdom issue/results && m4 issue.m4.md > issue/README.md"
   },
   "author": "",
   "license": "ISC",

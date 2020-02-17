@@ -13,6 +13,7 @@ else
 fi
 mkdir -p $ROOT || exit
 NS="$NS $(cat "$ROOT/max-test-count-jest-512") $(cat "$ROOT/max-test-count-ava-512")"
+rm -f $ROOT/failed $ROOT/time $ROOT/max-ram
 
 pip3 install psrecord matplotlib csv2md --user
 export PATH="$PATH:$HOME/.local/bin"
@@ -39,29 +40,26 @@ function runsome {
 
     echo "# N=$N R=$RAM"
     I=0
-    while [ "$(cat "$BASE.code")" = "0" -a "$I" != "5" ]
+    rm -f "$BASE"*
+    while [ "$(cat "$BASE.code")" != "0" -a "$I" != "5" ]
     do
       rm -f "$BASE"*
       date +%s > "$BASE.start"
       $CMD "$N" "$RAM" "$BASE" "$ENV"
       date +%s > "$BASE.finish"
       I=$((I + 1))
+      echo \#$I try done
     done
     TIME=$(($(cat "$BASE.finish") - $(cat "$BASE.start")))
     echo "$BASE $TIME" >> $ROOT/time
     MAXRAM=$(cat "$BASE.log" | sed 's/\s\s*/ /g' |tail -n +2|cut -f 4 -d ' '|sort -n|tail -n 1)
     echo "$BASE $MAXRAM" >> $ROOT/max-ram
+    echo "code=$(cat "$BASE.code")"
     if [ "$(cat "$BASE.code")" != "0" ]
     then
-      rm $BASE.png
       echo $BASE >> $ROOT/failed
     fi
 }
-
-echo ========================================================================
-echo AVA
-echo ========================================================================
-echo
 
 for R in $RAMS
 do
@@ -70,11 +68,6 @@ do
     runsome ava $N $R $ENV
   done
 done
-
-echo ========================================================================
-echo JEST
-echo ========================================================================
-echo
 
 for R in $RAMS
 do
@@ -86,6 +79,7 @@ done
 
 for R in $RAMS
 do
+  rm -f "$ROOT/duration-$R."*
   echo "tests,ava,jest" > "$ROOT/duration-$R.csv"
   for N in $NS
   do

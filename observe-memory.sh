@@ -12,7 +12,6 @@ else
   ROOT="$SRC-$ENV"
 fi
 mkdir -p $ROOT || exit
-NS="$NS $(cat "$ROOT/max-test-count-jest-512") $(cat "$ROOT/max-test-count-ava-512")"
 rm -f $ROOT/failed $ROOT/time $ROOT/max-ram
 
 pip3 install psrecord matplotlib csv2md --user
@@ -36,19 +35,23 @@ function runsome {
     N="$2"
     RAM="$3"
     ENV="$4"
+    ALLOWFAILURE="$5"
     BASE="$ROOT/result-$CMD-$RAM-$N"
 
     echo "# N=$N R=$RAM"
     I=0
     rm -f "$BASE"*
-    while [ "$(cat "$BASE.code")" != "0" -a "$I" != "5" ]
+    while [ "$(cat "$BASE.code")" != "0" ]
     do
       rm -f "$BASE"*
       date +%s > "$BASE.start"
       $CMD "$N" "$RAM" "$BASE" "$ENV"
       date +%s > "$BASE.finish"
       I=$((I + 1))
-      echo \#$I try done
+      if [ "$ALLOWFAILURE" = "yes" -a "$I" == "5" ]
+      then
+        break
+      fi
     done
     TIME=$(($(cat "$BASE.finish") - $(cat "$BASE.start")))
     echo "$BASE $TIME" >> $ROOT/time
@@ -65,23 +68,25 @@ for R in $RAMS
 do
   for N in $NS
   do
-    runsome ava $N $R $ENV
+    runsome ava $N $R $ENV yes
   done
 done
+runsome ava $(cat "$ROOT/max-test-count-ava-512") 512 $ENV no
 
 for R in $RAMS
 do
   for N in $NS
   do
-    runsome jest $N $R $ENV
+    runsome jest $N $R $ENV yes
   done
 done
+runsome jest $(cat "$ROOT/max-test-count-jest-512") 512 $ENV no
 
 for R in $RAMS
 do
   rm -f "$ROOT/duration-$R."*
   echo "tests,ava,jest" > "$ROOT/duration-$R.csv"
-  for N in $NS
+  for N in $NS $(cat "$ROOT/max-test-count-jest-512") $(cat "$ROOT/max-test-count-ava-512")
   do
     convert +append $ROOT/result-ava-$R-$N.png $ROOT/result-jest-$R-$N.png $ROOT/plot-sidebyside-$R-$N.png
     if [ "$(cat "$ROOT/result-jest-$R-$N.code")" = "0" ]

@@ -38,7 +38,7 @@ function runsome {
     ALLOWFAILURE="$5"
     BASE="$ROOT/result-$CMD-$RAM-$N"
 
-    echo "# N=$N R=$RAM"
+    echo "# $CMD N=$N R=$RAM"
     I=0
     rm -f "$BASE"*
     while [ "$(cat "$BASE.code")" != "0" ]

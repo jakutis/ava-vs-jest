@@ -56,6 +56,8 @@ function runsome {
   echo "$MAXN $DURATION"
 }
 
+rm "$ROOT/max-test-count."* "$ROOT/duration."* "$ROOT/memory-per-test."* "$ROOT/time-per-test."*
+
 echo "RAM,ava,jest" > "$ROOT/max-test-count.csv"
 echo "RAM,ava,jest" > "$ROOT/duration.csv"
 echo "RAM,ava,jest" > "$ROOT/memory-per-test.csv"

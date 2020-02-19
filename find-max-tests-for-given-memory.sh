@@ -42,7 +42,7 @@ function runsome {
     then
       MAXN=$N
     fi
-    if [ "$(((N - MIN) / 16))" = "0" -o "$(((MAX - N) / 16))" = "0" ]
+    if [ "$(((N - MIN) / 16))" = "0" -o "$(((MAX - N) / 256))" = "0" ]
     then
       break
     fi

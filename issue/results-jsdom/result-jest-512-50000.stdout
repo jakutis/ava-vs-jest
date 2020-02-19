@@ -1,0 +1,32 @@
+
+<--- Last few GCs --->
+
+[27710:0x2cc6dc0]   140120 ms: Mark-sweep 485.9 (537.0) -> 470.8 (537.2) MB, 267.0 / 0.0 ms  (average mu = 0.347, current mu = 0.330) allocation failure scavenge might not succeed
+[27710:0x2cc6dc0]   140531 ms: Mark-sweep 486.4 (537.2) -> 471.3 (537.7) MB, 270.9 / 0.0 ms  (average mu = 0.344, current mu = 0.341) allocation failure scavenge might not succeed
+
+
+<--- JS stacktrace --->
+
+==== JS stack trace =========================================
+
+    0: ExitFrame [pc: 0x1376519]
+Security context: 0x3e9fd70008a1 <JSObject>
+    1: /* anonymous */(aka /* anonymous */) [0x39af179c39b1] [/home/jakutis/Desktop/ava-vs-jest/fat-jest/node_modules/expect/build/index.js:~171] [pc=0x1f98656fb00a](this=0x11ceadd004a9 <undefined>,0x283dcb7c7c99 <String[#23]: toHaveBeenNthCalledWith>)
+    2: forEach [0x190e5af3a0c9](this=0x39af179c3991 <JSArray[47]>,0x39af179c39b1 <JSFunction (sfi = 0x16a05d8faa...
+
+FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory
+
+Writing Node.js report to file: report.20200219.171118.27710.0.001.json
+Node.js report completed
+ 1: 0x9dab80 node::Abort() [node]
+ 2: 0x9dbd36 node::OnFatalError(char const*, char const*) [node]
+ 3: 0xb3b45e v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [node]
+ 4: 0xb3b7d9 v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [node]
+ 5: 0xce6b75  [node]
+ 6: 0xce7206 v8::internal::Heap::RecomputeLimits(v8::internal::GarbageCollector) [node]
+ 7: 0xcf309a v8::internal::Heap::PerformGarbageCollection(v8::internal::GarbageCollector, v8::GCCallbackFlags) [node]
+ 8: 0xcf3fa5 v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [node]
+ 9: 0xcf69b8 v8::internal::Heap::AllocateRawWithRetryOrFail(int, v8::internal::AllocationType, v8::internal::AllocationAlignment) [node]
+10: 0xcbd2e7 v8::internal::Factory::NewFillerObject(int, bool, v8::internal::AllocationType) [node]
+11: 0xff334b v8::internal::Runtime_AllocateInYoungGeneration(int, unsigned long*, v8::internal::Isolate*) [node]
+12: 0x1376519  [node]

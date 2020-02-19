@@ -1,0 +1,6 @@
+PASS ./jest-jsdom.spec.js (158.162s)
+
+Test Suites: 1 passed, 1 total
+Tests:       47119 passed, 47119 total
+Snapshots:   0 total
+Time:        158.573s

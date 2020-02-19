@@ -1,6 +1,0 @@
-PASS ./jest.spec.js (227.477s)
-
-Test Suites: 1 passed, 1 total
-Tests:       50000 passed, 50000 total
-Snapshots:   0 total
-Time:        228.02s

@@ -20,6 +20,10 @@ Notes:
 * in the benchmarks ava test reporter is normal (names of all tests are printed), while jest is silenced (no test name output)
 * to compile the images below, run `npm start` (it will take time)
 
+Jump to:
+- [Node.js environment test](#node)
+- [JSDOM environment test](#jsdom)
+
 define({{__env__}}, {{node}})dnl
 include({{results.m4.md}})
 define({{__env__}}, {{jsdom}})dnl

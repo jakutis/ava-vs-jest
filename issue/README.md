@@ -24,6 +24,7 @@ Jump to:
 - [JSDOM environment test](#jsdom)
 
 <a name="node"/>
+
 # node
 
 ## many files with one test
@@ -203,6 +204,7 @@ Ava on the left, Jest on the right.
 
 
 <a name="jsdom"/>
+
 # jsdom
 
 ## many files with one test

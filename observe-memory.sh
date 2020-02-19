@@ -43,6 +43,7 @@ function runsome {
     rm -f "$BASE"*
     while [ "$(cat "$BASE.code")" != "0" ]
     do
+      echo try \#$((I + 1))
       rm -f "$BASE"*
       date +%s > "$BASE.start"
       $CMD "$N" "$RAM" "$BASE" "$ENV"

@@ -23,9 +23,35 @@ Jump to:
 - [Node.js environment test](#node)
 - [JSDOM environment test](#jsdom)
 
-<a name="node"/>
+<a name="node"/></a>
 
 # node
+
+ava test:
+```javascript
+const test = require('ava');
+const { expect } = require('chai')
+
+for (var i = 1; i <= Number(process.env.FATJEST_COUNT); i++) {
+  test('product #' + i, t => {
+    expect('hi').to.equal('hi')
+    t.pass()
+  })
+}
+
+```
+
+jest test:
+```javascript
+describe('product', () => {
+  for (var i = 1; i <= Number(process.env.FATJEST_COUNT); i++) {
+    test('works #' + i, () => {
+      expect('hi').toBe('hi')
+    })
+  }
+})
+
+```
 
 ## many files with one test
 
@@ -203,9 +229,67 @@ Ava on the left, Jest on the right.
 | 136855 | 16  | -    |
 
 
-<a name="jsdom"/>
+<a name="jsdom"/></a>
 
 # jsdom
+
+ava test:
+```javascript
+const test = require('ava')
+const { expect } = require('chai')
+const React = require('react')
+const { render, findDOMNode } = require('react-dom')
+const { JSDOM } = require('jsdom')
+global.window = (new JSDOM('<!doctype html><html><body></body></html>', {
+  url: 'https://example.org/',
+  referrer: 'https://example.com/',
+  contentType: 'text/html',
+  includeNodeLocations: true,
+  storageQuota: 10000000
+})).window
+global.document = global.window.document
+
+for (const key in global.window) {
+  if (global.window.hasOwnProperty(key) && !(key in global)) {
+    global[key] = global.window[key]
+  }
+}
+
+for (var i = 1; i <= Number(process.env.FATJEST_COUNT); i++) {
+  test('product #' + i, t => {
+    const container = document.createElement('div')
+    document.body.appendChild(container)
+    const element = React.createElement('p', {}, 'hi')
+    const component = render(element, container)
+    const node = findDOMNode(component)
+    expect(node.innerHTML).to.equal('hi')
+    document.body.removeChild(container)
+    t.pass()
+  })
+}
+
+```
+
+jest test:
+```javascript
+const React = require('react')
+const { render, findDOMNode } = require('react-dom')
+
+describe('product', () => {
+  for (var i = 1; i <= Number(process.env.FATJEST_COUNT); i++) {
+    test('works #' + i, () => {
+      const container = document.createElement('div')
+      document.body.appendChild(container)
+      const element = React.createElement('p', {}, 'hi')
+      const component = render(element, container)
+      const node = findDOMNode(component)
+      expect(node.innerHTML).toBe('hi')
+      document.body.removeChild(container)
+    })
+  }
+})
+
+```
 
 ## many files with one test
 

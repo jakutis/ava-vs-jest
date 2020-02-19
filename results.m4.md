@@ -1,6 +1,16 @@
-<a name="__env__"/>
+<a name="__env__"/></a>
 
 # __env__
+
+ava test:
+```javascript
+include(ava-__env__.spec.js)
+```
+
+jest test:
+```javascript
+include(jest-__env__.spec.js)
+```
 
 ## many files with one test
 

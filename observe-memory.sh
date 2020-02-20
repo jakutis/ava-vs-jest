@@ -86,7 +86,7 @@ runsome jest $(cat "$ROOT/max-test-count-jest-512") 512 $ENV no
 for R in $RAMS
 do
   rm -f "$ROOT/duration-$R."*
-  echo "tests,ava,jest" > "$ROOT/duration-$R.csv"
+  echo "tests,AVA,Jest" > "$ROOT/duration-$R.csv"
   for N in $NS $(cat "$ROOT/max-test-count-jest-512") $(cat "$ROOT/max-test-count-ava-512")
   do
     convert +append $ROOT/result-ava-$R-$N.png $ROOT/result-jest-$R-$N.png $ROOT/plot-sidebyside-$R-$N.png
@@ -109,5 +109,5 @@ do
     echo "$N,$AVA,$JEST" >> "$ROOT/duration-$R.csv"
   done
   csv2md "$ROOT/duration-$R.csv" > "$ROOT/duration-$R.md"
-  gnuplot -e "set datafile separator ',';set grid;set term png;set output '$ROOT/duration-$R.png';set ylabel 'time, s';set xlabel 'number of tests';plot '$ROOT/duration-$R.csv' using 1:2 with lines title 'ava', '$ROOT/duration-$R.csv' using 1:3 with lines title 'jest'"
+  gnuplot -e "set datafile separator ',';set grid;set term png;set output '$ROOT/duration-$R.png';set ylabel 'time, s';set xlabel 'number of tests';plot '$ROOT/duration-$R.csv' using 1:2 with lines title 'AVA', '$ROOT/duration-$R.csv' using 1:3 with lines title 'Jest'"
 done

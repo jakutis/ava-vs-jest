@@ -2,19 +2,19 @@
 
 # __env__
 
-ava test:
+AVA test:
 ```javascript
 include(ava-__env__.spec.js)
 ```
 
-jest test:
+Jest test:
 ```javascript
 include(jest-__env__.spec.js)
 ```
 
 ## many files with one test
 
-Both ava and jest are set to run 4 files concurrently.
+Both AVA and Jest are set to run 4 files concurrently.
 
 ### max memory used
 
@@ -63,7 +63,7 @@ include(issue/results-__env__/time-per-test.md)
 ### memory usage plot
 
 When max-old-space-size is 512MB.
-Ava on the left, Jest on the right. 
+AVA on the left, Jest on the right. 
 
 #### 10000
 
@@ -77,11 +77,11 @@ Ava on the left, Jest on the right.
 
 ![TODO](results-__env__/plot-sidebyside-512-50000.png)
 
-#### include(issue/results-__env__/max-test-count-jest-512) (max for jest)
+#### include(issue/results-__env__/max-test-count-jest-512) (max for Jest)
 
 ![TODO](results-__env__/plot-sidebyside-512-include(issue/results-__env__/max-test-count-jest-512).png)
 
-#### include(issue/results-__env__/max-test-count-ava-512) (max for ava)
+#### include(issue/results-__env__/max-test-count-ava-512) (max for AVA)
 
 ![TODO](results-__env__/plot-sidebyside-512-include(issue/results-__env__/max-test-count-ava-512).png)
 

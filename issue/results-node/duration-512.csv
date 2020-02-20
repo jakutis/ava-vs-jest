@@ -1,4 +1,4 @@
-tests,ava,jest
+tests,AVA,Jest
 10000,2,7
 25000,3,33
 50000,5,137

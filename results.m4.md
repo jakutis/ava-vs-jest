@@ -62,7 +62,8 @@ include(issue/results-__env__/time-per-test.md)
 
 ### memory usage plot
 
-Ava on the left, Jest on the right.
+When max-old-space-size is 512MB.
+Ava on the left, Jest on the right. 
 
 #### 10000
 

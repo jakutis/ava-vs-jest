@@ -36,6 +36,7 @@ function runsome {
     ENV="$3"
     BASE="$ROOT/result-$CMD-$N"
 
+    rm -rf "$BASE-tests"
     mkdir "$BASE-tests"
     for I in $(seq 1 $N)
     do
@@ -54,16 +55,20 @@ function runsome {
     fi
 }
 
+rm "$ROOT/memory."* "$ROOT/multifile-duration."* "$ROOT/memory-per-file."* "$ROOT/time-per-file."*
 echo "files,AVA,Jest" > "$ROOT/memory.csv"
 echo "files,AVA,Jest" > "$ROOT/multifile-duration.csv"
 echo "files,AVA,Jest" > "$ROOT/memory-per-file.csv"
 echo "files,AVA,Jest" > "$ROOT/time-per-file.csv"
+echo "# observe-memory-multifile $ENV"
 for N in $NS
 do
-  echo "# $N"
+  echo "## $N"
+  echo "### jest"
   JEST=$(runsome "jest" "$N" "$ENV")
   JEST_R="${JEST%% *}"
   JEST_T="${JEST##* }"
+  echo "### ava"
   AVA=$(runsome "ava" "$N" "$ENV")
   AVA_R="${AVA%% *}"
   AVA_T="${AVA##* }"

@@ -249,6 +249,8 @@ Ava on the left, Jest on the right.
 
 ### time to run
 
+When max-old-space-size is 512MB.
+
 ![TODO](results-node/duration-512.png)
 | tests  | ava | jest |
 | ------ | --- | ---- |
@@ -487,6 +489,8 @@ Ava on the left, Jest on the right.
 ![TODO](results-jsdom/plot-sidebyside-512-74706.png)
 
 ### time to run
+
+When max-old-space-size is 512MB.
 
 ![TODO](results-jsdom/duration-512.png)
 | tests | ava | jest |

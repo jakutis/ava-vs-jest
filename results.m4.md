@@ -87,5 +87,7 @@ Ava on the left, Jest on the right.
 
 ### time to run
 
+When max-old-space-size is 512MB.
+
 ![TODO](results-__env__/duration-512.png)
 include(issue/results-__env__/duration-512.md)

@@ -14,7 +14,7 @@ Notes:
 * the only features that Jest bundles and we use and thus need to add to AVA, are assertion library and JSDOM:
   * for assertion library, latest `chai` is used there
   * for JSDOM, latest `jsdom` is used there
-* default `max-old-space-size` of Node.js is 512MB.
+* Node.js memory control is performed via the `max-old-space-size` argument, default is 512MB
 * the results are for Linux 4.19.0 kernel on `Intel(R) Core(TM) i7-7820HQ` CPU with `32GB` of RAM
 * degree of parallelism for both AVA and Jest are set to 4
 * in the benchmarks AVA test reporter is normal (names of all tests are printed), while Jest is silenced (no test name output)
@@ -34,7 +34,7 @@ Below are the results, which conclude:
 - node+one file many tests
   - Jest uses 2 times more memory (can run 56624 tests vs. 136855 for 512MB of memory) ([see graph](#maximum-number-of-tests-per-max-old-space-size))
   - Jest is slower ([see graph](#time-to-run))
-    - with 512MB ram: 4 times slower for 10000 tests, 11 times slower for 25000 tests, 27 times slower for 50000 tests
+    - with 512MB of memory: 4 times slower for 10000 tests, 11 times slower for 25000 tests, 27 times slower for 50000 tests
     - aggressively spends time to run garbage collector ([see graphs](#memory-usage-plot))
     - [see graph](#time-to-run-maximum-number-of-tests) for maximum number of tests
       - with 128MB memory: 4 times slower for max tests
@@ -46,7 +46,7 @@ Below are the results, which conclude:
 - jsdom+one file many tests
   - Jest uses 2 times more memory (can run 47119 tests vs. 74706 for 512MB of memory) ([see graph](#maximum-number-of-tests-per-max-old-space-size-1)) TODOrecheck
   - Jest is slower ([see graph](#time-to-run-1))
-    - with 512MB ram: 4 times slower for 10000 tests, 11 times slower for 25000 tests
+    - with 512MB of memory: 4 times slower for 10000 tests, 11 times slower for 25000 tests
     - aggressively spends time to run garbage collector ([see graphs](#memory-usage-plot-1))
     - [see graph](#time-to-run-maximum-number-of-tests-1) for maximum number of tests
       - with 128MB memory: 2 times slower

@@ -45,8 +45,8 @@ function runsome {
     $CMD "$BASE" "$ENV"
     date +%s > "$BASE.finish"
     TIME=$(($(cat "$BASE.finish") - $(cat "$BASE.start")))
-    MAXRAM=$(cat "$BASE.log" | sed 's/\s\s*/ /g' |tail -n +2|cut -f 4 -d ' '|sort -n|tail -n 1)
-    echo "$MAXRAM $TIME"
+    MAXMEMORY=$(cat "$BASE.log" | sed 's/\s\s*/ /g' |tail -n +2|cut -f 4 -d ' '|sort -n|tail -n 1)
+    echo "$MAXMEMORY $TIME"
     if [ "$(cat "$BASE.code")" != "0" ]
     then
       rm $BASE.png
@@ -54,10 +54,10 @@ function runsome {
     fi
 }
 
-echo "N,ava,jest" > "$ROOT/memory.csv"
-echo "N,ava,jest" > "$ROOT/multifile-duration.csv"
-echo "N,ava,jest" > "$ROOT/memory-per-file.csv"
-echo "N,ava,jest" > "$ROOT/time-per-file.csv"
+echo "files,AVA,Jest" > "$ROOT/memory.csv"
+echo "files,AVA,Jest" > "$ROOT/multifile-duration.csv"
+echo "files,AVA,Jest" > "$ROOT/memory-per-file.csv"
+echo "files,AVA,Jest" > "$ROOT/time-per-file.csv"
 for N in $NS
 do
   echo "# $N"
@@ -74,10 +74,10 @@ do
 done
 
 csv2md "$ROOT/memory.csv" > "$ROOT/memory.md"
-gnuplot -e "set datafile separator ',';set grid;set term png;set output '$ROOT/memory.png';set ylabel 'max memory used, MB';set xlabel 'number of test files';plot '$ROOT/memory.csv' using 1:2 with lines title 'ava', '$ROOT/memory.csv' using 1:3 with lines title 'jest'"
+gnuplot -e "set datafile separator ',';set grid;set term png;set output '$ROOT/memory.png';set ylabel 'max memory used, MB';set xlabel 'number of test files';plot '$ROOT/memory.csv' using 1:2 with lines title 'AVA', '$ROOT/memory.csv' using 1:3 with lines title 'Jest'"
 csv2md "$ROOT/multifile-duration.csv" > "$ROOT/multifile-duration.md"
-gnuplot -e "set datafile separator ',';set grid;set term png;set output '$ROOT/multifile-duration.png';set ylabel 'duration, s';set xlabel 'number of test files';plot '$ROOT/multifile-duration.csv' using 1:2 with lines title 'ava', '$ROOT/multifile-duration.csv' using 1:3 with lines title 'jest'"
+gnuplot -e "set datafile separator ',';set grid;set term png;set output '$ROOT/multifile-duration.png';set ylabel 'duration, s';set xlabel 'number of test files';plot '$ROOT/multifile-duration.csv' using 1:2 with lines title 'AVA', '$ROOT/multifile-duration.csv' using 1:3 with lines title 'Jest'"
 csv2md "$ROOT/memory-per-file.csv" > "$ROOT/memory-per-file.md"
-gnuplot -e "set datafile separator ',';set grid;set term png;set output '$ROOT/memory-per-file.png';set ylabel 'max mean memory per file used, MB';set xlabel 'number of test files';plot '$ROOT/memory-per-file.csv' every ::7 using 1:2 with lines title 'ava', '$ROOT/memory-per-file.csv' every ::7 using 1:3 with lines title 'jest'"
+gnuplot -e "set datafile separator ',';set grid;set term png;set output '$ROOT/memory-per-file.png';set ylabel 'max mean memory per file used, MB';set xlabel 'number of test files';plot '$ROOT/memory-per-file.csv' every ::7 using 1:2 with lines title 'AVA', '$ROOT/memory-per-file.csv' every ::7 using 1:3 with lines title 'Jest'"
 csv2md "$ROOT/time-per-file.csv" > "$ROOT/time-per-file.md"
-gnuplot -e "set datafile separator ',';set grid;set term png;set output '$ROOT/time-per-file.png';set ylabel 'mean duration per file, s';set xlabel 'number of test files';plot '$ROOT/time-per-file.csv' every ::7 using 1:2 with lines title 'ava', '$ROOT/time-per-file.csv' every ::7 using 1:3 with lines title 'jest'"
+gnuplot -e "set datafile separator ',';set grid;set term png;set output '$ROOT/time-per-file.png';set ylabel 'mean duration per file, s';set xlabel 'number of test files';plot '$ROOT/time-per-file.csv' every ::7 using 1:2 with lines title 'AVA', '$ROOT/time-per-file.csv' every ::7 using 1:3 with lines title 'Jest'"

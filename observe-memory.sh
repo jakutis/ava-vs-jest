@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-RAMS="512"
+MEMORIES="512"
 NS="10000 25000 50000"
 ENV="$1"
 ROOT="$2"
@@ -33,12 +33,12 @@ function ava {
 function runsome {
     CMD="$1"
     N="$2"
-    RAM="$3"
+    MEMORY="$3"
     ENV="$4"
     ALLOWFAILURE="$5"
-    BASE="$ROOT/result-$CMD-$RAM-$N"
+    BASE="$ROOT/result-$CMD-$MEMORY-$N"
 
-    echo "# $CMD N=$N R=$RAM"
+    echo "# $CMD N=$N R=$MEMORY"
     I=0
     rm -f "$BASE"*
     while [ "$(cat "$BASE.code")" != "0" ]
@@ -46,7 +46,7 @@ function runsome {
       echo try \#$((I + 1))
       rm -f "$BASE"*
       date +%s > "$BASE.start"
-      $CMD "$N" "$RAM" "$BASE" "$ENV"
+      $CMD "$N" "$MEMORY" "$BASE" "$ENV"
       date +%s > "$BASE.finish"
       I=$((I + 1))
       if [ "$ALLOWFAILURE" = "yes" -a "$I" == "5" ]
@@ -56,8 +56,8 @@ function runsome {
     done
     TIME=$(($(cat "$BASE.finish") - $(cat "$BASE.start")))
     echo "$BASE $TIME" >> $ROOT/time
-    MAXRAM=$(cat "$BASE.log" | sed 's/\s\s*/ /g' |tail -n +2|cut -f 4 -d ' '|sort -n|tail -n 1)
-    echo "$BASE $MAXRAM" >> $ROOT/max-ram
+    MAXMEMORY=$(cat "$BASE.log" | sed 's/\s\s*/ /g' |tail -n +2|cut -f 4 -d ' '|sort -n|tail -n 1)
+    echo "$BASE $MAXMEMORY" >> $ROOT/max-ram
     echo "code=$(cat "$BASE.code")"
     if [ "$(cat "$BASE.code")" != "0" ]
     then
@@ -65,7 +65,7 @@ function runsome {
     fi
 }
 
-for R in $RAMS
+for R in $MEMORIES
 do
   for N in $NS
   do
@@ -74,7 +74,7 @@ do
 done
 runsome ava $(cat "$ROOT/max-test-count-ava-512") 512 $ENV no
 
-for R in $RAMS
+for R in $MEMORIES
 do
   for N in $NS
   do
@@ -83,7 +83,7 @@ do
 done
 runsome jest $(cat "$ROOT/max-test-count-jest-512") 512 $ENV no
 
-for R in $RAMS
+for R in $MEMORIES
 do
   rm -f "$ROOT/duration-$R."*
   echo "tests,AVA,Jest" > "$ROOT/duration-$R.csv"

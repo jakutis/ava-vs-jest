@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-RAMS="8 16 32 64 128 256 512 1024"
+MEMORIES="8 16 32 64 128 256 512 1024"
 ENV="$1"
 ROOT="$2"
 SRC="$(pwd)"
@@ -58,11 +58,11 @@ function runsome {
 
 rm "$ROOT/max-test-count."* "$ROOT/duration."* "$ROOT/memory-per-test."* "$ROOT/time-per-test."*
 
-echo "RAM,ava,jest" > "$ROOT/max-test-count.csv"
-echo "RAM,ava,jest" > "$ROOT/duration.csv"
-echo "RAM,ava,jest" > "$ROOT/memory-per-test.csv"
-echo "RAM,ava,jest" > "$ROOT/time-per-test.csv"
-for R in $RAMS
+echo "memory,AVA,Jest" > "$ROOT/max-test-count.csv"
+echo "memory,AVA,Jest" > "$ROOT/duration.csv"
+echo "memory,AVA,Jest" > "$ROOT/memory-per-test.csv"
+echo "memory,AVA,Jest" > "$ROOT/time-per-test.csv"
+for R in $MEMORIES
 do
   echo "R=$R ENV=$ENV"
   JEST=$(runsome "jest" "$R" "$ENV")
@@ -80,10 +80,10 @@ do
 done
 
 csv2md "$ROOT/max-test-count.csv" > "$ROOT/max-test-count.md"
-gnuplot -e "set datafile separator ',';set grid;set term png;set output '$ROOT/max-test-count.png';set ylabel 'maximum number of tests';set xlabel 'max-old-space-size, MB';plot '$ROOT/max-test-count.csv' using 1:2 with lines title 'ava', '$ROOT/max-test-count.csv' using 1:3 with lines title 'jest'"
+gnuplot -e "set datafile separator ',';set grid;set term png;set output '$ROOT/max-test-count.png';set ylabel 'maximum number of tests';set xlabel 'max-old-space-size, MB';plot '$ROOT/max-test-count.csv' using 1:2 with lines title 'AVA', '$ROOT/max-test-count.csv' using 1:3 with lines title 'Jest'"
 csv2md "$ROOT/duration.csv" > "$ROOT/duration.md"
-gnuplot -e "set datafile separator ',';set grid;set term png;set output '$ROOT/duration.png';set ylabel 'time, s';set xlabel 'max-old-space-size, MB';plot '$ROOT/duration.csv' using 1:2 with lines title 'ava', '$ROOT/duration.csv' using 1:3 with lines title 'jest'"
+gnuplot -e "set datafile separator ',';set grid;set term png;set output '$ROOT/duration.png';set ylabel 'time, s';set xlabel 'max-old-space-size, MB';plot '$ROOT/duration.csv' using 1:2 with lines title 'AVA', '$ROOT/duration.csv' using 1:3 with lines title 'Jest'"
 csv2md "$ROOT/memory-per-test.csv" > "$ROOT/memory-per-test.md"
-gnuplot -e "set datafile separator ',';set grid;set term png;set output '$ROOT/memory-per-test.png';set ylabel 'memory, MB';set xlabel 'max-old-space-size, MB';plot '$ROOT/memory-per-test.csv' every ::4 using 1:2 with lines title 'ava', '$ROOT/memory-per-test.csv' every ::4 using 1:3 with lines title 'jest'"
+gnuplot -e "set datafile separator ',';set grid;set term png;set output '$ROOT/memory-per-test.png';set ylabel 'memory, MB';set xlabel 'max-old-space-size, MB';plot '$ROOT/memory-per-test.csv' every ::4 using 1:2 with lines title 'AVA', '$ROOT/memory-per-test.csv' every ::4 using 1:3 with lines title 'Jest'"
 csv2md "$ROOT/time-per-test.csv" > "$ROOT/time-per-test.md"
-gnuplot -e "set datafile separator ',';set grid;set term png;set output '$ROOT/time-per-test.png';set ylabel 'time, s';set xlabel 'max-old-space-size, MB';plot '$ROOT/time-per-test.csv' every ::4 using 1:2 with lines title 'ava', '$ROOT/time-per-test.csv' every ::4 using 1:3 with lines title 'jest'"
+gnuplot -e "set datafile separator ',';set grid;set term png;set output '$ROOT/time-per-test.png';set ylabel 'time, s';set xlabel 'max-old-space-size, MB';plot '$ROOT/time-per-test.csv' every ::4 using 1:2 with lines title 'AVA', '$ROOT/time-per-test.csv' every ::4 using 1:3 with lines title 'Jest'"

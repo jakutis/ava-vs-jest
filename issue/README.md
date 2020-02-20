@@ -35,7 +35,7 @@ Below are the results, which conclude:
   - jest is slower ([see graph](#time-to-run))
     - with 512MB ram: 4 times slower for 10000 tests, 11 times slower for 25000 tests, 27 times slower for 50000 tests
     - aggressively spends time to run garbage collector ([see graphs](#memory-usage-plot))
-    - [see graph](#time-to-run-maximum-number-of-tests]) for maximum number of tests
+    - [see graph](#time-to-run-maximum-number-of-tests) for maximum number of tests
       - with 128MB memory: 4 times slower for max tests
       - with 256MB memory: 8 times slower for max tests
       - with 512MB memory: 13 times slower for max tests 
@@ -47,7 +47,7 @@ Below are the results, which conclude:
   - jest is slower ([see graph](#time-to-run-1))
     - with 512MB ram: 4 times slower for 10000 tests, 11 times slower for 25000 tests
     - aggressively spends time to run garbage collector ([see graphs](#memory-usage-plot-1))
-    - [see graph](#time-to-run-maximum-number-of-tests-1]) for maximum number of tests
+    - [see graph](#time-to-run-maximum-number-of-tests-1) for maximum number of tests
       - with 128MB memory: 2 times slower
       - with 256MB memory: 4 times slower
       - with 512MB memory: 19 times slower 

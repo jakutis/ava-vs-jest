@@ -30,7 +30,7 @@ Below are the results, which conclude:
 - Jest is significantly inferior everywhere except in running many (more than 100) test files in parallel
 - node+many files one test
   - Jest uses 3 times more memory (673MB vs. 235MB for 128 test files) ([see graph](#max-memory-used))
-  - Jest is 1.5 times faster (5s vs. 8s for 128 test files, 10s vs. 14s for 256 test files) ([see graph](#duration))
+  - Jest is 1.5 times faster (3s vs. 4s for 64 test files, 5s vs. 8s for 128 test files, 10s vs. 14s for 256 test files) ([see graph](#duration))
 - node+one file many tests
   - Jest uses 2 times more memory (can run 56624 tests vs. 136855 for 512MB of memory) ([see graph](#maximum-number-of-tests-per-max-old-space-size))
   - Jest is slower ([see graph](#time-to-run))
@@ -42,9 +42,9 @@ Below are the results, which conclude:
       - with 512MB memory: 13 times slower for max tests 
 - jsdom+many files one test
   - Jest uses 3 times more memory (1006MB vs. 393MB for 128 test files) ([see graph](#max-memory-used-1))
-  - Jest is 6 times faster (6s vs. 27s for 128 test files, 8s vs. 55s for 256 test files) ([see graph](#duration-1))
+  - Jest is 6 times faster (4s vs. 14s for 64 test files, 6s vs. 27s for 128 test files, 8s vs. 55s for 256 test files) ([see graph](#duration-1))
 - jsdom+one file many tests
-  - Jest uses 2 times more memory (can run 47119 tests vs. 74706 for 512MB of memory) ([see graph](#maximum-number-of-tests-per-max-old-space-size-1)) TODOrecheck
+  - Jest uses 2 times more memory (can run 47119 tests vs. 74706 for 512MB of memory) ([see graph](#maximum-number-of-tests-per-max-old-space-size-1))
   - Jest is slower ([see graph](#time-to-run-1))
     - with 512MB of memory: 4 times slower for 10000 tests, 11 times slower for 25000 tests
     - aggressively spends time to run garbage collector ([see graphs](#memory-usage-plot-1))

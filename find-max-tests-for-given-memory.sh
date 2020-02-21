@@ -2,15 +2,18 @@
 
 MEMORIES="8 16 32 64 128 256 512 1024"
 ENV="$1"
-ROOT="$2"
 SRC="$(pwd)"
-if [ -n "$ROOT" ]
+if [ -n "$2" ]
 then
-  ROOT="$(realpath "$ROOT")-$ENV"
+  ROOT="$2-$ENV"
 else
   ROOT="$SRC-$ENV"
 fi
-mkdir -p $ROOT || exit
+pushd .
+mkdir -p "$ROOT" || exit
+cd "$ROOT"
+ROOT="$(pwd)"
+popd
 
 pip3 install csv2md --user
 export PATH="$PATH:$HOME/.local/bin"

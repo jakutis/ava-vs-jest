@@ -2,16 +2,21 @@
 
 MEMORIES="512"
 NS="10000 25000 50000"
+
 ENV="$1"
-ROOT="$2"
 SRC="$(pwd)"
-if [ -n "$ROOT" ]
+if [ -n "$2" ]
 then
-  ROOT="$(realpath "$ROOT")-$ENV"
+  ROOT="$2-$ENV"
 else
   ROOT="$SRC-$ENV"
 fi
-mkdir -p $ROOT || exit
+pushd .
+mkdir -p "$ROOT" || exit
+cd "$ROOT"
+ROOT="$(pwd)"
+popd
+
 rm -f $ROOT/failed $ROOT/time $ROOT/max-ram
 
 pip3 install psrecord matplotlib csv2md --user

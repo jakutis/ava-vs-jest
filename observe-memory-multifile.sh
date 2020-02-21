@@ -17,7 +17,7 @@ ROOT="$(pwd)"
 popd
 
 pip3 install psrecord matplotlib csv2md --user
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$(python3 -m site --user-base)/bin"
 
 npm install
 export PATH="$PATH:$SRC/node_modules/.bin"

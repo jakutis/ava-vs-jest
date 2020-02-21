@@ -16,7 +16,7 @@ ROOT="$(pwd)"
 popd
 
 pip3 install csv2md --user
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$(python3 -m site --user-base)/bin"
 
 npm install
 export PATH="$PATH:$(pwd)/node_modules/.bin"

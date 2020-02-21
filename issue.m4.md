@@ -15,10 +15,13 @@ Notes:
   * for assertion library, latest `chai` is used there
   * for JSDOM, latest `jsdom` is used there
 * Node.js memory control is performed via the `max-old-space-size` argument, default is 512MB
-* the results are for Linux 4.19.0 kernel on `Intel(R) Core(TM) i7-7820HQ` CPU with `32GB` of RAM
 * degree of parallelism for both AVA and Jest are set to 4
 * in the benchmarks AVA test reporter is normal (names of all tests are printed), while Jest is silenced (no test name output)
 * to compile the images below, run `npm start` (it will take time)
+
+```
+__envinfo__
+```
 
 
 Jump to:

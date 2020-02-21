@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "rm -rf issue && mkdir issue && ./find-max-tests-for-given-memory.sh node issue/results && ./find-max-tests-for-given-memory.sh jsdom issue/results && ./observe-memory.sh node issue/results && ./observe-memory.sh jsdom issue/results && ./observe-memory-multifile.sh node issue/results && ./observe-memory-multifile.sh jsdom issue/results && m4 issue.m4.md > issue/README.md"
+    "start": "rm -rf issue && mkdir issue && ./find-max-tests-for-given-memory.sh node issue/results && ./find-max-tests-for-given-memory.sh jsdom issue/results && ./observe-memory.sh node issue/results && ./observe-memory.sh jsdom issue/results && ./observe-memory-multifile.sh node issue/results && ./observe-memory-multifile.sh jsdom issue/results && m4 \"-D__envinfo__=$(npx envinfo --binaries && npx envinfo --system && npx envinfo --npmPackages)\" issue.m4.md > issue/README.md"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "ava": "3.2.0",
     "chai": "4.2.0",
+    "envinfo": "7.5.0",
     "jest": "25.1.0",
     "jsdom": "16.1.0",
     "react": "16.12.0",

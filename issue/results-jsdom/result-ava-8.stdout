@@ -1,12 +1,116 @@
+FAIL issue/results-jsdom/result-ava-8-tests/test2-ava.spec.js
+  ● Test suite failed to run
 
-  ✔ test2-ava › product #1
-  ✔ test4-ava › product #1
-  ✔ test1-ava › product #1
-  ✔ test3-ava › product #1
-  ✔ test5-ava › product #1
-  ✔ test6-ava › product #1
-  ✔ test7-ava › product #1
-  ✔ test8-ava › product #1
+    TypeError: require(...).getRunner is not a function
 
-  8 tests passed
+    > 1 | const test = require('ava')
+        |              ^
+      2 | const { expect } = require('chai')
+      3 | const React = require('react')
+      4 | const { render, findDOMNode } = require('react-dom')
 
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+      at Object.<anonymous> (issue/results-jsdom/result-ava-8-tests/test2-ava.spec.js:1:14)
+
+FAIL issue/results-jsdom/result-ava-8-tests/test3-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+    > 1 | const test = require('ava')
+        |              ^
+      2 | const { expect } = require('chai')
+      3 | const React = require('react')
+      4 | const { render, findDOMNode } = require('react-dom')
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+      at Object.<anonymous> (issue/results-jsdom/result-ava-8-tests/test3-ava.spec.js:1:14)
+
+FAIL issue/results-jsdom/result-ava-8-tests/test8-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+    > 1 | const test = require('ava')
+        |              ^
+      2 | const { expect } = require('chai')
+      3 | const React = require('react')
+      4 | const { render, findDOMNode } = require('react-dom')
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+      at Object.<anonymous> (issue/results-jsdom/result-ava-8-tests/test8-ava.spec.js:1:14)
+
+FAIL issue/results-jsdom/result-ava-8-tests/test1-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+    > 1 | const test = require('ava')
+        |              ^
+      2 | const { expect } = require('chai')
+      3 | const React = require('react')
+      4 | const { render, findDOMNode } = require('react-dom')
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+      at Object.<anonymous> (issue/results-jsdom/result-ava-8-tests/test1-ava.spec.js:1:14)
+
+FAIL issue/results-jsdom/result-ava-8-tests/test4-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+    > 1 | const test = require('ava')
+        |              ^
+      2 | const { expect } = require('chai')
+      3 | const React = require('react')
+      4 | const { render, findDOMNode } = require('react-dom')
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+      at Object.<anonymous> (issue/results-jsdom/result-ava-8-tests/test4-ava.spec.js:1:14)
+
+FAIL issue/results-jsdom/result-ava-8-tests/test5-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+    > 1 | const test = require('ava')
+        |              ^
+      2 | const { expect } = require('chai')
+      3 | const React = require('react')
+      4 | const { render, findDOMNode } = require('react-dom')
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+      at Object.<anonymous> (issue/results-jsdom/result-ava-8-tests/test5-ava.spec.js:1:14)
+
+FAIL issue/results-jsdom/result-ava-8-tests/test7-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+    > 1 | const test = require('ava')
+        |              ^
+      2 | const { expect } = require('chai')
+      3 | const React = require('react')
+      4 | const { render, findDOMNode } = require('react-dom')
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+      at Object.<anonymous> (issue/results-jsdom/result-ava-8-tests/test7-ava.spec.js:1:14)
+
+FAIL issue/results-jsdom/result-ava-8-tests/test6-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+    > 1 | const test = require('ava')
+        |              ^
+      2 | const { expect } = require('chai')
+      3 | const React = require('react')
+      4 | const { render, findDOMNode } = require('react-dom')
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+      at Object.<anonymous> (issue/results-jsdom/result-ava-8-tests/test6-ava.spec.js:1:14)
+
+Test Suites: 8 failed, 8 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        1.917 s

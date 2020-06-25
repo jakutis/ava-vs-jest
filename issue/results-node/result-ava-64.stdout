@@ -1,68 +1,902 @@
+FAIL issue/results-node/result-ava-64-tests/test62-ava.spec.js
+  ● Test suite failed to run
 
-  ✔ test12-ava › product #1
-  ✔ test1-ava › product #1
-  ✔ test10-ava › product #1
-  ✔ test11-ava › product #1
-  ✔ test13-ava › product #1
-  ✔ test16-ava › product #1
-  ✔ test14-ava › product #1
-  ✔ test15-ava › product #1
-  ✔ test17-ava › product #1
-  ✔ test19-ava › product #1
-  ✔ test2-ava › product #1
-  ✔ test18-ava › product #1
-  ✔ test20-ava › product #1
-  ✔ test21-ava › product #1
-  ✔ test22-ava › product #1
-  ✔ test23-ava › product #1
-  ✔ test24-ava › product #1
-  ✔ test25-ava › product #1
-  ✔ test26-ava › product #1
-  ✔ test27-ava › product #1
-  ✔ test28-ava › product #1
-  ✔ test29-ava › product #1
-  ✔ test3-ava › product #1
-  ✔ test30-ava › product #1
-  ✔ test31-ava › product #1
-  ✔ test32-ava › product #1
-  ✔ test33-ava › product #1
-  ✔ test35-ava › product #1
-  ✔ test34-ava › product #1
-  ✔ test36-ava › product #1
-  ✔ test37-ava › product #1
-  ✔ test38-ava › product #1
-  ✔ test39-ava › product #1
-  ✔ test4-ava › product #1
-  ✔ test40-ava › product #1
-  ✔ test41-ava › product #1
-  ✔ test42-ava › product #1
-  ✔ test44-ava › product #1
-  ✔ test43-ava › product #1
-  ✔ test45-ava › product #1
-  ✔ test46-ava › product #1
-  ✔ test47-ava › product #1
-  ✔ test49-ava › product #1
-  ✔ test5-ava › product #1
-  ✔ test48-ava › product #1
-  ✔ test50-ava › product #1
-  ✔ test52-ava › product #1
-  ✔ test53-ava › product #1
-  ✔ test51-ava › product #1
-  ✔ test54-ava › product #1
-  ✔ test55-ava › product #1
-  ✔ test57-ava › product #1
-  ✔ test56-ava › product #1
-  ✔ test58-ava › product #1
-  ✔ test6-ava › product #1
-  ✔ test59-ava › product #1
-  ✔ test60-ava › product #1
-  ✔ test61-ava › product #1
-  ✔ test62-ava › product #1
-  ✔ test63-ava › product #1
-  ✔ test64-ava › product #1
-  ✔ test7-ava › product #1
-  ✔ test8-ava › product #1
-  ✔ test9-ava › product #1
+    TypeError: require(...).getRunner is not a function
 
-  64 tests passed
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
 
+FAIL issue/results-node/result-ava-64-tests/test8-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test3-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test13-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test48-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test31-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test9-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test32-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test60-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test11-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test22-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test45-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test2-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test15-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test28-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test57-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test61-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test53-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test19-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test21-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test30-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test34-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test33-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test26-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test38-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test39-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test27-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test1-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test54-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test16-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test52-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test42-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test18-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test51-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test40-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test41-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test46-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test20-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test10-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test4-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test29-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test50-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test58-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test5-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test36-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test12-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test59-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test14-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test64-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test25-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test35-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test47-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test56-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test43-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test63-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test7-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test6-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test37-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test24-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test17-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test49-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test44-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test23-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test55-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+Summary of all failing tests
+FAIL issue/results-node/result-ava-64-tests/test62-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test8-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test3-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test13-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test48-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test31-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test9-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test32-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test60-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test11-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test22-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test45-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test2-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test15-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test28-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test57-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test61-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test53-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test19-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test21-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test30-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test34-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test33-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test26-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test38-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test39-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test27-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test1-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test54-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test16-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test52-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test42-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test18-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test51-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test40-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test41-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test46-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test20-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test10-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test4-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test29-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test50-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test58-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test5-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test36-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test12-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test59-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test14-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test64-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test25-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test35-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test47-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test56-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test43-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test63-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test7-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test6-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test37-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test24-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test17-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test49-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test44-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test23-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-64-tests/test55-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+
+Test Suites: 64 failed, 64 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        3.368 s

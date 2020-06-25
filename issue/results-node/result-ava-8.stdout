@@ -1,12 +1,60 @@
+FAIL issue/results-node/result-ava-8-tests/test1-ava.spec.js
+  ● Test suite failed to run
 
-  ✔ test1-ava › product #1
-  ✔ test2-ava › product #1
-  ✔ test4-ava › product #1
-  ✔ test3-ava › product #1
-  ✔ test5-ava › product #1
-  ✔ test7-ava › product #1
-  ✔ test6-ava › product #1
-  ✔ test8-ava › product #1
+    TypeError: require(...).getRunner is not a function
 
-  8 tests passed
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
 
+FAIL issue/results-node/result-ava-8-tests/test8-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-8-tests/test3-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-8-tests/test5-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-8-tests/test4-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-8-tests/test7-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-8-tests/test2-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+FAIL issue/results-node/result-ava-8-tests/test6-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+
+Test Suites: 8 failed, 8 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        1.142 s

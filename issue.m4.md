@@ -1,3 +1,5 @@
+## !!! THIS IS A TEST OF jest-circus!!! Everywhere below where AVA is mentioned, it is actually jest with jest-circus runner
+
 changequote(`{{', `}}')dnl
 changecom(`%%`)
 We need need to evaluate options to migrate away from mocha.

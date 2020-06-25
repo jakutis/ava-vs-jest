@@ -1,6 +1,6 @@
-PASS ./jest-node.spec.js (32.547s)
+PASS ./jest-node.spec.js (19.496 s)
 
 Test Suites: 1 passed, 1 total
 Tests:       25000 passed, 25000 total
 Snapshots:   0 total
-Time:        32.582s
+Time:        19.527 s

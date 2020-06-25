@@ -1,32 +1,32 @@
-PASS issue/results-node/result-jest-32-tests/test4-jest.spec.js
-PASS issue/results-node/result-jest-32-tests/test14-jest.spec.js
-PASS issue/results-node/result-jest-32-tests/test8-jest.spec.js
 PASS issue/results-node/result-jest-32-tests/test11-jest.spec.js
+PASS issue/results-node/result-jest-32-tests/test4-jest.spec.js
+PASS issue/results-node/result-jest-32-tests/test8-jest.spec.js
+PASS issue/results-node/result-jest-32-tests/test14-jest.spec.js
 PASS issue/results-node/result-jest-32-tests/test2-jest.spec.js
-PASS issue/results-node/result-jest-32-tests/test23-jest.spec.js
 PASS issue/results-node/result-jest-32-tests/test32-jest.spec.js
-PASS issue/results-node/result-jest-32-tests/test1-jest.spec.js
-PASS issue/results-node/result-jest-32-tests/test21-jest.spec.js
-PASS issue/results-node/result-jest-32-tests/test6-jest.spec.js
 PASS issue/results-node/result-jest-32-tests/test20-jest.spec.js
+PASS issue/results-node/result-jest-32-tests/test23-jest.spec.js
+PASS issue/results-node/result-jest-32-tests/test1-jest.spec.js
+PASS issue/results-node/result-jest-32-tests/test6-jest.spec.js
+PASS issue/results-node/result-jest-32-tests/test21-jest.spec.js
 PASS issue/results-node/result-jest-32-tests/test28-jest.spec.js
 PASS issue/results-node/result-jest-32-tests/test19-jest.spec.js
-PASS issue/results-node/result-jest-32-tests/test24-jest.spec.js
 PASS issue/results-node/result-jest-32-tests/test7-jest.spec.js
+PASS issue/results-node/result-jest-32-tests/test24-jest.spec.js
 PASS issue/results-node/result-jest-32-tests/test31-jest.spec.js
 PASS issue/results-node/result-jest-32-tests/test3-jest.spec.js
-PASS issue/results-node/result-jest-32-tests/test18-jest.spec.js
 PASS issue/results-node/result-jest-32-tests/test27-jest.spec.js
+PASS issue/results-node/result-jest-32-tests/test18-jest.spec.js
 PASS issue/results-node/result-jest-32-tests/test29-jest.spec.js
 PASS issue/results-node/result-jest-32-tests/test25-jest.spec.js
-PASS issue/results-node/result-jest-32-tests/test9-jest.spec.js
 PASS issue/results-node/result-jest-32-tests/test15-jest.spec.js
-PASS issue/results-node/result-jest-32-tests/test26-jest.spec.js
+PASS issue/results-node/result-jest-32-tests/test9-jest.spec.js
 PASS issue/results-node/result-jest-32-tests/test12-jest.spec.js
+PASS issue/results-node/result-jest-32-tests/test26-jest.spec.js
 PASS issue/results-node/result-jest-32-tests/test30-jest.spec.js
 PASS issue/results-node/result-jest-32-tests/test13-jest.spec.js
-PASS issue/results-node/result-jest-32-tests/test17-jest.spec.js
 PASS issue/results-node/result-jest-32-tests/test5-jest.spec.js
+PASS issue/results-node/result-jest-32-tests/test17-jest.spec.js
 PASS issue/results-node/result-jest-32-tests/test10-jest.spec.js
 PASS issue/results-node/result-jest-32-tests/test22-jest.spec.js
 PASS issue/results-node/result-jest-32-tests/test16-jest.spec.js
@@ -34,4 +34,4 @@ PASS issue/results-node/result-jest-32-tests/test16-jest.spec.js
 Test Suites: 32 passed, 32 total
 Tests:       32 passed, 32 total
 Snapshots:   0 total
-Time:        1.724s
+Time:        2.191 s

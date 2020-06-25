@@ -26,7 +26,7 @@ function jest {
 }
 
 function ava {
-    (FATJEST_COUNT="$1" node --max_old_space_size=$2 ./node_modules/.bin/ava ava-$3.spec.js 1>/dev/null 2>&1;echo $?)
+    (FATJEST_COUNT="$1" node --max_old_space_size=$2 ./node_modules/.bin/jest --testRunner='jest-circus/runner' --env "$3" --silent jest-$3.spec.js 1>/dev/null 2>&1;echo $?)
 }
 
 function runsome {

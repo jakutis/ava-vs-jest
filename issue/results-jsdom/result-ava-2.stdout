@@ -1,6 +1,32 @@
+FAIL issue/results-jsdom/result-ava-2-tests/test1-ava.spec.js
+  ● Test suite failed to run
 
-  ✔ test1-ava › product #1
-  ✔ test2-ava › product #1
+    TypeError: require(...).getRunner is not a function
 
-  2 tests passed
+    > 1 | const test = require('ava')
+        |              ^
+      2 | const { expect } = require('chai')
+      3 | const React = require('react')
+      4 | const { render, findDOMNode } = require('react-dom')
 
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+      at Object.<anonymous> (issue/results-jsdom/result-ava-2-tests/test1-ava.spec.js:1:14)
+
+FAIL issue/results-jsdom/result-ava-2-tests/test2-ava.spec.js
+  ● Test suite failed to run
+
+    TypeError: require(...).getRunner is not a function
+
+    > 1 | const test = require('ava')
+        |              ^
+      2 | const { expect } = require('chai')
+      3 | const React = require('react')
+      4 | const { render, findDOMNode } = require('react-dom')
+
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+      at Object.<anonymous> (issue/results-jsdom/result-ava-2-tests/test2-ava.spec.js:1:14)
+
+Test Suites: 2 failed, 2 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        1.267 s

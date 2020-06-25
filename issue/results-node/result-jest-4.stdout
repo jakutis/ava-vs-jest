@@ -1,9 +1,9 @@
 PASS issue/results-node/result-jest-4-tests/test4-jest.spec.js
+PASS issue/results-node/result-jest-4-tests/test1-jest.spec.js
 PASS issue/results-node/result-jest-4-tests/test3-jest.spec.js
 PASS issue/results-node/result-jest-4-tests/test2-jest.spec.js
-PASS issue/results-node/result-jest-4-tests/test1-jest.spec.js
 
 Test Suites: 4 passed, 4 total
 Tests:       4 passed, 4 total
 Snapshots:   0 total
-Time:        0.794s
+Time:        0.969 s

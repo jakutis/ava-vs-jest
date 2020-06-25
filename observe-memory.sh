@@ -31,7 +31,7 @@ function jest {
 }
 
 function ava {
-    (FATJEST_COUNT="$1" node --max_old_space_size=$2 ./node_modules/.bin/ava "ava-$4.spec.js" 1>"$3.stdout" 2>&1;echo $? > "$3.code") &
+    (FATJEST_COUNT="$1" node --max_old_space_size=$2 ./node_modules/.bin/jest --testRunner='jest-circus/runner' --env "$4" --silent "jest-$4.spec.js" 1>"$3.stdout" 2>&1;echo $? > "$3.code") &
     psrecord --include-children --plot "$3.png" --log "$3.log" 1>/dev/null 2>&1 $!
 }
 

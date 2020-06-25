@@ -1,5 +1,18 @@
+FAIL issue/results-jsdom/result-ava-1-tests/test1-ava.spec.js
+  ● Test suite failed to run
 
-  ✔ product #1
+    TypeError: require(...).getRunner is not a function
 
-  1 test passed
+    > 1 | const test = require('ava')
+        |              ^
+      2 | const { expect } = require('chai')
+      3 | const React = require('react')
+      4 | const { render, findDOMNode } = require('react-dom')
 
+      at Object.<anonymous> (node_modules/ava/lib/worker/main.js:2:40)
+      at Object.<anonymous> (issue/results-jsdom/result-ava-1-tests/test1-ava.spec.js:1:14)
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        0.829 s

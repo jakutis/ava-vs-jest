@@ -1,4 +1,4 @@
-## !!! THIS IS A TEST OF jest-circus!!! Everywhere below where AVA is mentioned, it is actually jest with jest-circus runner
+## !!! THIS IS A TEST OF jest-circus!!! Ignore, the conclusions, just start at [raw results](#node). Everywhere below where AVA is mentioned, it is actually jest with jest-circus runner
 
 
 We need need to evaluate options to migrate away from mocha.
